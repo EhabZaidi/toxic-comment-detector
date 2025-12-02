@@ -142,11 +142,12 @@ function App() {
 
     try {
       // 1) Call FastAPI backend
-      const res = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: trimmed }),
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: trimmed }),
       })
+
 
       if (!res.ok) {
         throw new Error(`Server error: ${res.status}`)
