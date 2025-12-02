@@ -2,8 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
 import './App.css'
 
-// 🔌 Backend API URL
-const API_URL = 'http://127.0.0.1:8000/predict'
+
 
 type ApiPrediction = {
   label: number // 1 = toxic, 0 = non-toxic
